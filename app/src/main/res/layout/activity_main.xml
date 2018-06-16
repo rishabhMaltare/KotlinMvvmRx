@@ -3,23 +3,78 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
-    <data
-        />
+    <data>
+
+        <variable
+            name="mainVm"
+            type="com.rishabh.kotlinmvvmrx.MainViewModel"/>
+    </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/Snow"
         tools:context="com.rishabh.kotlinmvvmrx.MainActivity">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:gravity="center"
+            android:text="Please enter the github_owner_name "
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.233"/>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="298dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="github_owner_name"
+            android:inputType="textPersonName"
+            android:text="@={mainVm.user}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="299dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorPrimary"
+            android:onClick="startActivity"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Fetch Repos"
+            android:textColor="@color/White"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>
