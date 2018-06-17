@@ -40,23 +40,10 @@
             android:gravity="center"
             android:hint="github_owner_name"
             android:inputType="textPersonName"
-            android:text="@={mainVm.user}"
+            android:text="@={mainVm.repo}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"/>
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="299dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.523"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"/>
 
         <Button
             android:id="@+id/button"
@@ -69,9 +56,8 @@
             android:onClick="startActivity"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:text="Fetch Repos"
+            android:text="Fetch Open Pull Reuests"
             android:textColor="@color/White"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText"/>

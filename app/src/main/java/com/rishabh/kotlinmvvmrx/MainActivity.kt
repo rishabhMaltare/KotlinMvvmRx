@@ -14,16 +14,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding?.mainVm = MainViewModel()
+        binding?.mainVm = MainViewModel(null)
     }
 
     fun startActivity(view: View) {
         val intent = Intent(this, PullRequestsActivity::class.java)
-        intent.putExtra("repo", binding?.mainVm?.user?.get())
+        intent.putExtra("repo", binding?.mainVm?.repo?.get())
         startActivity(intent)
     }
-
 
 }

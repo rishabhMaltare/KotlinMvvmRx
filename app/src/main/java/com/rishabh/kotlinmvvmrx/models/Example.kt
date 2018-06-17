@@ -49,7 +49,7 @@ class Example {
     @Expose
     var title: String? = null
 
-    @SerializedName("user")
+    @SerializedName("repo")
     @Expose
     var user: User? = null
 

@@ -10,9 +10,9 @@ import retrofit2.http.Query
  * Created by Rishabh on 16-06-2018.
  */
 interface IntroFitRx {
-    @GET("repos/{user}/pulls")
+    @GET("repos/{repo}/pulls")
     fun getRepos(
-            @Path(value = "user", encoded = true) user: String,
+            @Path(value = "repo", encoded = true) repo: String,
             @Query("state") state: String
     ): Observable<ArrayList<Example>>
 }
