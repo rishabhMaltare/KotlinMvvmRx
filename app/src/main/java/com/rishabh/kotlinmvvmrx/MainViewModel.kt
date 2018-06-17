@@ -16,6 +16,7 @@ import io.reactivex.schedulers.Schedulers
 
 interface Listener {
     fun refreshList(serverResponse: List<Example>)
+    fun showToast(msg: String)
 }
 
 class MainViewModel(private val listener: Listener?) {
@@ -32,10 +33,16 @@ class MainViewModel(private val listener: Listener?) {
             override fun onNext(serverResponse: List<Example>) {
                 Log.d(TAG, "onNext: response = " + serverResponse.toString())
                 listener?.refreshList(serverResponse)
+
+                if (serverResponse.isEmpty()) {
+                    listener?.showToast("No open pull requests!")
+                }
+
             }
 
             override fun onError(e: Throwable) {
                 Log.e(TAG, "onError: error = " + e.localizedMessage)
+                listener?.showToast(e.localizedMessage)
             }
 
             override fun onComplete() {

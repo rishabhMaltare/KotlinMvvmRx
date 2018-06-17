@@ -51,6 +51,10 @@ class Example {
 
     @SerializedName("repo")
     @Expose
+    var repo: Repo? = null
+
+    @SerializedName("user")
+    @Expose
     var user: User? = null
 
     @SerializedName("body")
